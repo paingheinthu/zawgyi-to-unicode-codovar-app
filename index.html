@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta c charset="utf-8">
+       <meta name="viewport" content="width=device-width, height=device-height initial-scal=1">
+       <meta name="viewport" content="width=device-width, height=device-height initial-scal=1">
+       <title>Zawgyi Unicode Convertor</title>
+       <link rel="stylesheet" href="themes/jQueryMobileRGBTheme.css"/>
+       <link rel="stylesheet" href="jquery/jquery.mobile.structure-1.4.3.min.css" />
+		<link rel="stylesheet" href="themes/style.css" />
+	   <script src="jquery/jquery-1.11.1.min.js"></script>
+	   <script src="jquery/jquery.mobile-1.4.3.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script>
+       <script type="text/javascript" src="js/fConvert.js"></script>
+    </head>
+    <body>
+        <script src="js/ZeroClipboard.js"></script>
+        <script>
+            var btnZ = new ZeroClipboard(document.getElementById("btnZCopy"),{moviePath:"themes/ZeroClipboard.swf", debug: false});
+    btnZ.on("load", function(btnz){
+    });
+        </script>
+        <div data-role="page" data-theme="a" id="mainContainer">
+            <div data-role="header" data-position="inline">
+                <h1>Zawgyi To Unicode To Zawgyi</h1>
+            </div>
+            
+            <div data-role="content" data-theme="a">
+               	<div data-theme="a">
+					Zawgyi
+				</div>
+				<div>
+					<input id="btnpastezawgyi" onclick="PasteZawgyi()" type="button" value="Paste" data-theme="a"/>
+					<input id="btnclearzawgyi" onclick="zawgyiclear()" type="button" value="Clear" data-theme="a"/>
+				</div>
+				<div>
+					<textarea id="txaZawgyi" rows="10" style="width: 100%;font-family:'Zawgyi-One';  font-size: 15px;height:100%;"></textarea>
+				</div>
+				<div data-theme="a">
+					<input id="btnToUnicode" onclick="mmconvert()" type="button" value="To Unicode" data-theme="a"/>
+				</div>
+               	<div data-theme="a">
+				 Unicode
+				</div>
+				<div>
+					<input id="btnpasteuni" onclick="PasteUni()" type="button" value="Paste" data-theme="a"/>
+					<input id="btnclearuni" onclick="uniclear()" type="button" value="Clear" data-theme="a"/>
+				</div>
+                <div data-theme="a">
+ <textarea id="txaUnicode" rows="15" style="width: 100%;font-family:'Myanmar3';font-size: 15px;" data-theme="a" rows="50"></textarea>
+				</div> 
+                <div data-theme="a">
+  <input id="btnToUnicode" onclick="zgconvert()" type="button" value="To Zawgyi" data-theme="a"/>
+				</div>        
+                    
+                          
+
+            </div>
+			
+			<div data-role="footer" data-position="inline" style="text-align:center" data-theme="a">
+<!-- 				Credit to http://mrdba.info/unicode-converter/ <br />
+				Developed by Paing Hein Thu And Nyein Chan -->
+			</div>
+        </div>
+
+
+    </body>
+</html>
+     
