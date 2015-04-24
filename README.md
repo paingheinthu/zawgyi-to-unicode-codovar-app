@@ -9,8 +9,8 @@ Credit to
 
 Functions
 =========
-*Can use copy paste
-*can Clear text
+* Can use copy paste
+* can Clear text
 
 bug
 ===
