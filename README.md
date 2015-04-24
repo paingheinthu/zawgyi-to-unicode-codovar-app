@@ -1,6 +1,6 @@
 # zawgyi-to-unicode-codovar-app
 Zawgyi to Unicode and Unicode to Zawgyi app With Apache Cordova
-
+thank to Ko Nyein Chan for helping development.
 Credit to
 =========
 * Converter function form [parabeik](https://github.com/ngwestar/parabaik)
