@@ -11,6 +11,3 @@ Functions
 * Can use copy paste
 * can Clear text
 
-bug
-===
-Can not showing many text in textarea. but you can press spacebar or some key in textarea you can see all of text.
