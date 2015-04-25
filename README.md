@@ -3,7 +3,7 @@ Zawgyi to Unicode and Unicode to Zawgyi app With Apache Cordova
 
 Credit to
 =========
-* Converter function form [parabeik](https://github.com/ngwestar/parabaik)
+* Converter function from [parabeik](https://github.com/ngwestar/parabaik)
 * Main UI from [Mrdba](http://mrdba.info/zawgyi-converter/)
 * copy paste function from [zeroclipboard](https://github.com/zeroclipboard/zeroclipboard)
 
