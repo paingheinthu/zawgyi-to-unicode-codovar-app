@@ -1,5 +1,6 @@
 /*
 * follwing functions are referenced by Mr.DBA Blog
+*Credit to paragu coverter
 */
 function Z1_Uni(input) {
    var output=input;
@@ -102,6 +103,8 @@ function Z1_Uni(input) {
    output =  output.replace( /(\u103A)(\u1037)/g, "$2$1");
    return output;
 }//Z1_Uni
+
+
 function Uni_Z1(input)
 {
    var output = input;
@@ -307,40 +310,4 @@ function Uni_Z1(input)
    );
    // aukmyint
    return output;
-}
-
-function mmconvert() {
-src = document.getElementById("txaZawgyi").value;
-var text = Z1_Uni(src);
-cordova.plugins.clipboard.copy(text);
-document.getElementById("txaUnicode").value = Z1_Uni(src);
-}
-
-function zgconvert() {
-src = document.getElementById("txaUnicode").value;
-
-var text = Uni_Z1(src);
-cordova.plugins.clipboard.copy(text);
-	
-document.getElementById("txaZawgyi").value = Uni_Z1(src);
-}
-
-function PasteZawgyi(){
-    cordova.plugins.clipboard.paste(function(text_paste){
-	document.getElementById("txaZawgyi").value=text_paste;
-	});
-   
-}
-
-function PasteUni(){
-    cordova.plugins.clipboard.paste(function(text_paste){
-	document.getElementById("txaUnicode").value=text_paste;
-	});
-   
-}
-function uniclear(){
-	document.getElementById("txaUnicode").value = '';
-}
-function zawgyiclear(){
-	document.getElementById("txaZawgyi").value = '';
 }

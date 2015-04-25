@@ -1,0 +1,34 @@
+  html, body {
+                height: 100%;
+                margin: 0;
+            }
+core-scaffold {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+    core-toolbar {
+      color: #f1f1f1;
+      fill: #f1f1f1;
+    }
+    paper-button.colored {
+      color: #ffffff;
+    }
+    paper-toggle-button.function::shadow .toggle-ink {
+      color: #F9A825;
+    }
+
+    paper-toggle-button.function::shadow .toggle-bar {
+      background-color: #F9A825;
+    }
+
+    paper-toggle-button.function::shadow .toggle-button {
+      background-color: #FFEB3B;
+    }
+    paper-fab {
+      color: #fff;
+      margin-right:2em;
+		float:right;
+    }

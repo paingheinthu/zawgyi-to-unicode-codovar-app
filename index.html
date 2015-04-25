@@ -1,70 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-       <meta c charset="utf-8">
-       <meta name="viewport" content="width=device-width, height=device-height initial-scal=1">
-       <meta name="viewport" content="width=device-width, height=device-height initial-scal=1">
-       <title>Zawgyi Unicode Convertor</title>
-       <link rel="stylesheet" href="themes/jQueryMobileRGBTheme.css"/>
-       <link rel="stylesheet" href="jquery/jquery.mobile.structure-1.4.3.min.css" />
-		<link rel="stylesheet" href="themes/style.css" />
-	   <script src="jquery/jquery-1.11.1.min.js"></script>
-	   <script src="jquery/jquery.mobile-1.4.3.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script>
-       <script type="text/javascript" src="js/fConvert.js"></script>
-    </head>
-    <body>
-        <script src="js/ZeroClipboard.js"></script>
-        <script>
-            var btnZ = new ZeroClipboard(document.getElementById("btnZCopy"),{moviePath:"themes/ZeroClipboard.swf", debug: false});
-    btnZ.on("load", function(btnz){
-    });
-        </script>
-        <div data-role="page" data-theme="a" id="mainContainer">
-            <div data-role="header" data-position="inline">
-                <h1>Zawgyi To Unicode To Zawgyi</h1>
-            </div>
-            
-            <div data-role="content" data-theme="a">
-               	<div data-theme="a">
-					Zawgyi
-				</div>
-				<div>
-					<input id="btnpastezawgyi" onclick="PasteZawgyi()" type="button" value="Paste" data-theme="a"/>
-					<input id="btnclearzawgyi" onclick="zawgyiclear()" type="button" value="Clear" data-theme="a"/>
-				</div>
-				<div>
-					<textarea id="txaZawgyi" rows="10" style="width: 100%;font-family:'Zawgyi-One';  font-size: 15px;height:100%;"></textarea>
-				</div>
-				<div data-theme="a">
-					<input id="btnToUnicode" onclick="mmconvert()" type="button" value="To Unicode" data-theme="a"/>
-				</div>
-               	<div data-theme="a">
-				 Unicode
-				</div>
-				<div>
-					<input id="btnpasteuni" onclick="PasteUni()" type="button" value="Paste" data-theme="a"/>
-					<input id="btnclearuni" onclick="uniclear()" type="button" value="Clear" data-theme="a"/>
-				</div>
-                <div data-theme="a">
- <textarea id="txaUnicode" rows="15" style="width: 100%;font-family:'Myanmar3';font-size: 15px;" data-theme="a" rows="50"></textarea>
-				</div> 
-                <div data-theme="a">
-  <input id="btnToUnicode" onclick="zgconvert()" type="button" value="To Zawgyi" data-theme="a"/>
-				</div>        
-                    
-                          
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="mobile-web-app-capable" content="yes">
+	<title>ZU</title>
 
-            </div>
-			
-			<div data-role="footer" data-position="inline" style="text-align:center" data-theme="a">
-<!-- 				Credit to http://mrdba.info/unicode-converter/ <br />
-				Developed by Paing Hein Thu And Nyein Chan -->
-			</div>
-        </div>
+ 	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/fConvert.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script>
+	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="import" href="bower_components/polymer/polymer.html">
+	<link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+	<link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+	<link rel="import" href="bower_components/core-icons/core-icons.html">
+	<link rel="import" href="bower_components/core-item/core-item.html">
+	<link rel="import" href="bower_components/paper-toast/paper-toast.html">
+	<link rel="import" href="bower_components/paper-item/paper-item.html">
+	<link rel="import" href="bower_components/paper-fab/paper-fab.html">
+	<link rel="import" href="bower_components/paper-input/paper-input.html">
+	<link rel="import" href="bower_components/paper-input/paper-autogrow-textarea.html">
+	<link rel="import" href="bower_components/paper-toggle-button/paper-toggle-button.html">
+	<link rel="import" href="bower_components/paper-button/paper-button.html">
+	<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+	<link rel="import" href="bower_components/paper-dialog/paper-action-dialog.html">
+</head>
+<body unresolved touch-action="auto">
+	
+<core-toolbar style="background: #C62828;">
+	<span flex>ZU</span>
+	<div center horizontal layout>
+		<div flex>Zawgyi</div>
+		<paper-toggle-button class="function" id="convertToggle" checked></paper-toggle-button>
+		<div flex>Unicode</div>
+	</div>
+	<paper-icon-button icon="content-paste" title="Paste" id="pasteButton"></paper-icon-button>
+	<paper-icon-button icon="refresh" title="Clear" id="clearButton"></paper-icon-button>
+	<paper-icon-button icon="more-vert" id="settingButton"></paper-icon-button>
+</core-toolbar>
+	
+<paper-input-decorator label="Zawgyi" floatingLabel>
+	<paper-autogrow-textarea id="zawgyiAutogrow">
+		<textarea id="zawgyiTextArea"></textarea>
+	</paper-autogrow-textarea>
+</paper-input-decorator>
+	
+<paper-input-decorator label="Myanmar Unicode" floatingLabel>
+	<paper-autogrow-textarea id="unicodeAutogrow">
+		<textarea id="unicodeTextArea"></textarea>
+	</paper-autogrow-textarea>
+</paper-input-decorator>
 
-
-    </body>
+<paper-fab icon="done" title="Convert" id="convertFloatButton"></paper-fab>
+	
+<paper-action-dialog backdrop autoCloseDisabled layered="false" Title="About" id="aboutDialog">
+	<p><h2>ZU Version 1.1.0</h2></p>
+	
+  <p>* Converter function credit to <a href="https://github.com/ngwestar/parabaik">parabeik</a></p>
+  <p>*Developed by Paing Hein Thu And Nyein Chan</p>
+<p>Base UI using With <a href="https://www.polymer-project.org">Polymer</a></p>
+<p>you can feel freely modify :D <a href="https://github.com/paingheinthu/zawgyi-to-unicode-codovar-app/tree/1.1">ZU Source</a></p>
+  <paper-button affirmative autofocus>Close</paper-button>
+</paper-action-dialog>
+</body>
 </html>
-     

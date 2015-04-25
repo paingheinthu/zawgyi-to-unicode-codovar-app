@@ -1,11 +1,9 @@
-# zawgyi-to-unicode-codovar-app
-Zawgyi to Unicode and Unicode to Zawgyi app With Apache Cordova
+# zawgyi-to-unicode-codovar-app V 1.1.0
+Metrial Design Zawgyi to Unicode and Unicode to Zawgyi app With Apache Cordova
 
 Credit to
 =========
 * Converter function form [parabeik](https://github.com/ngwestar/parabaik)
-* Main UI from [Mrdba](http://mrdba.info/zawgyi-converter/)
-* copy paste function from [zeroclipboard](https://github.com/zeroclipboard/zeroclipboard)
 
 Functions
 =========

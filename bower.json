@@ -1,0 +1,19 @@
+{
+  "name": "ZU",
+  "version": "1.1.0",
+  "authors": [
+    "paingheinthu <anarkhi.hein@gmail.com>"
+  ],
+  "license": "GPL/GNU",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5",
+    "core-elements": "Polymer/core-elements#~0.5.5"
+  }
+}
